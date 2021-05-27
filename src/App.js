@@ -7,8 +7,6 @@ const action = new Subject(); // actions
 const start = action.pipe(filter(a => a === 'start'));
 const stop = action.pipe(filter(a => a === 'stop'));
 
-let sec, min, hour = 1
-
 const secObserv = interval(200).pipe( // counts till one minute
   map(sec => {
     if (sec > 59) {
@@ -24,7 +22,7 @@ const secObserv = interval(200).pipe( // counts till one minute
 );
 
 const minObserv = interval(12000).pipe( // counts till one hour
-  tap(min=>console.log(min)),
+  tap(min => console.log(min)),
   map(min => {
     if (min > 59) {
       throw min;
@@ -64,19 +62,30 @@ const observable = concat(counterStop.pipe(
 
 export default React.memo(function App() {
 
-
+  const [work, setWork] = React.useState(false);
 
   const [seconds, incSecond] = React.useState(0);
   const [minutes, incMinutes] = React.useState(0);
   const [hours, incHours] = React.useState(0);
 
+ 
+
   React.useEffect(() => {
-    /* const sub = observable.subscribe(incSecond);
-    return () => sub.unsubscribe(); */
-    secObserv.subscribe(incSecond);
-    minObserv.subscribe(incMinutes);
-    hourObserv.subscribe(incHours);
-  }, [])
+    console.log(work)
+
+    if (work) {
+      secObserv.subscribe(incSecond);
+      minObserv.subscribe(incMinutes);
+      hourObserv.subscribe(incHours);
+    }
+    if (!work) {
+      secObserv.subscribe(incSecond).unsubscribe();
+      minObserv.subscribe(incMinutes).unsubscribe();
+      hourObserv.subscribe(incHours).unsubscribe();
+    }
+
+  }, [work])
+
 
   return (
     <div className="wrapper">
@@ -89,8 +98,8 @@ export default React.memo(function App() {
       </div>
 
       <div className="buttons">
-        <button onClick={() => action.next('start')}> START</button>
-        <button onClick={() => action.next('stop')}>STOP</button>
+        <button onClick={() => setWork(true)}> START</button>
+        <button onClick={() => setWork(false)}>STOP</button>
       </div>
 
     </div>
