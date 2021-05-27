@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/https//tisukRoman.github.io/test-task/static/css/main.170c930c.chunk.css",
+    "main.js": "/https//tisukRoman.github.io/test-task/static/js/main.757d4712.chunk.js",
+    "main.js.map": "/https//tisukRoman.github.io/test-task/static/js/main.757d4712.chunk.js.map",
+    "runtime-main.js": "/https//tisukRoman.github.io/test-task/static/js/runtime-main.12871123.js",
+    "runtime-main.js.map": "/https//tisukRoman.github.io/test-task/static/js/runtime-main.12871123.js.map",
+    "static/js/2.e635a8db.chunk.js": "/https//tisukRoman.github.io/test-task/static/js/2.e635a8db.chunk.js",
+    "static/js/2.e635a8db.chunk.js.map": "/https//tisukRoman.github.io/test-task/static/js/2.e635a8db.chunk.js.map",
+    "static/js/3.ff5bbe17.chunk.js": "/https//tisukRoman.github.io/test-task/static/js/3.ff5bbe17.chunk.js",
+    "static/js/3.ff5bbe17.chunk.js.map": "/https//tisukRoman.github.io/test-task/static/js/3.ff5bbe17.chunk.js.map",
+    "index.html": "/https//tisukRoman.github.io/test-task/index.html",
+    "static/css/main.170c930c.chunk.css.map": "/https//tisukRoman.github.io/test-task/static/css/main.170c930c.chunk.css.map",
+    "static/js/2.e635a8db.chunk.js.LICENSE.txt": "/https//tisukRoman.github.io/test-task/static/js/2.e635a8db.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12871123.js",
+    "static/js/2.e635a8db.chunk.js",
+    "static/css/main.170c930c.chunk.css",
+    "static/js/main.757d4712.chunk.js"
+  ]
+}
